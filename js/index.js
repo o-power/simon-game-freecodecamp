@@ -19,6 +19,8 @@ const strictButton = document.querySelector("#strict");
 const onButton = document.querySelector("#on");
 const startButton = document.querySelector("#start");
 
+
+// use change event instead
 strictButton.addEventListener('click', (event) => {
     if (strictButton.checked == true) {
         strict = true;
@@ -65,9 +67,9 @@ function play() {
 }
 
 function gameTurn() {
-    on = false;
+    on = false; // stops player from clicking buttons?
 
-    if (flash == turn) {
+    if (flash == turn) { // on turn 1, there will be 1 flash; turn 2, 2 flashes etc.
         clearInterval(intervalId);
         compTurn = false;
         clearColor();
@@ -81,7 +83,7 @@ function gameTurn() {
             if (order[flash] == 2) two();
             if (order[flash] == 3) three();
             if (order[flash] == 4) four();
-            flash++;
+            flash++; // increment the number of flashes
         }, 200);
     }
 }
